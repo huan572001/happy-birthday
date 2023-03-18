@@ -1,18 +1,15 @@
 import { Card, Col, Row } from 'antd';
-import { useState } from 'react';
+
+import React, { useState } from 'react';
 import './App.css';
-import { Img1, Img2, Img3, Img4, Img5, Img6, LV } from './img';
+import Game from './component/game';
+import Mascot from './component/Mascot';
+import { Img1, Img2, Img3, Img4, Img5, Img6 } from './img';
 function App() {
-  const [open, setopen] = useState(false);
+  const [maseger, setMaseger] = useState();
   return (
     <div className="app">
-      <div className="mascot" style={open ? { display: 'none' } : {}}>
-        <img src={LV} alt="lv" />
-        <div onClick={() => setopen(true)} className="closeMascots">
-          X
-        </div>
-      </div>
-
+      <Mascot />
       <Row>
         <Col className="img-my-Girl" span={4}>
           <div>
@@ -27,7 +24,9 @@ function App() {
           </div>
         </Col>
         <Col span={16}>
-          <Card className="card-screen">hello</Card>
+          <Card className="card-screen">
+            <Game />
+          </Card>
         </Col>
         <Col className="img-my-Girl" span={4}>
           <div className="flex-left">
