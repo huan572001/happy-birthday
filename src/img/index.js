@@ -9,4 +9,6 @@ import Gach from './gach.jpg';
 import B1 from './banhSN.jpg';
 import B2 from './sn.jpg';
 import KB from './KB.jpg';
-export { Img1, Img2, Img3, Img4, Img5, Img6, LV, Gach, B1, B2, KB };
+import BR from './backGrou.png';
+import CH from './cauhoi.jpg';
+export { Img1, Img2, Img3, Img4, Img5, Img6, LV, Gach, B1, B2, KB, BR, CH };

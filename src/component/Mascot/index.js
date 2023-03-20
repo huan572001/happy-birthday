@@ -3,9 +3,9 @@ import TypewriterExample from '../Typing';
 import { Button, Card, Col, Row } from 'antd';
 import { LV } from '../../img';
 
-const Mascot = ({ maseger }) => {
-  const [open, setopen] = useState(false);
+const Mascot = ({ open, setopen, maseger, chirdren }) => {
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [openW, setWOpen] = useState(true);
   return (
     <div>
       <Row className="mascot" style={open ? { display: 'none' } : {}}>
@@ -14,15 +14,24 @@ const Mascot = ({ maseger }) => {
         </Col>
         <Col span={14}>
           <Card className="maseger">
-            <TypewriterExample
-              data={'Chào mừng bạn đến mini game'}
-              setIsTypingComplete={setIsTypingComplete}
-            />
+            {openW ? (
+              <TypewriterExample
+                data={maseger}
+                setIsTypingComplete={setIsTypingComplete}
+              />
+            ) : (
+              ''
+            )}
+            {chirdren}
           </Card>
           <div className="close">
             <Button
               style={isTypingComplete ? {} : { display: 'none' }}
-              onClick={() => setopen(true)}
+              onClick={() => {
+                setopen(true);
+                setIsTypingComplete(false);
+                setWOpen(false);
+              }}
             >
               Bắt đầu
             </Button>
