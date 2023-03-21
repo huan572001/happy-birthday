@@ -104,7 +104,8 @@ const Game = ({ setMeseger, setCheckGame, win, setWin }) => {
 
         return tmp;
       });
-      setMeseger();
+      // setMeseger();
+      setCheckGame(values);
       return true;
     } else if (values > 3) {
       setCheckGame(values);

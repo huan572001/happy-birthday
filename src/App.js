@@ -5,11 +5,12 @@ import './App.css';
 import Game from './component/game';
 import DoVui from './component/game/Dovui';
 import DoanSO from './component/game/miniGameDoanSo';
+import Winner from './component/game/WinGame';
 import Mascot from './component/Mascot';
 import { Img1, Img2, Img3, Img4, Img5, Img6, BR } from './img';
 function App() {
   const [maseger, setMaseger] = useState(
-    'Chúc mừng sinh nhật nha Hà <3 <3 qua tuổi mới chúc m ngày càng xinh đẹp hơn nè, luôn luôn mạnh khỏe thành công trong công việc. Chúc mọi điều tốt đẹp nhất sẽ đến với m nha. T cũng không biết tặng m cái gì nên t có viết mini game nho nhỏ. M chơi game vui vẻ nha hoàn thành trò chơi sẽ có một phần quà nho nhỏ của t gửi đến m á.'
+    'Chúc mừng sinh nhật nha Hà <3 <3 qua tuổi mới chúc m ngày càng xinh đẹp hơn nè, luôn luôn mạnh khỏe thành công trong công việc. Chúc mọi điều tốt đẹp nhất sẽ đến với m nha. T cũng không biết tặng m cái gì nên t có viết mini game nho nhỏ. M chơi game vui vẻ nha hoàn thành trò chơi sẽ có một phần quà nho nhỏ của t gửi đến m á. Để chơi game Hà hãy sử dụng những mũi tên lên xuống trái phải nha <3'
   );
   const [open, setOpen] = useState(false);
   const [checkGame, setCheckGame] = useState();
@@ -36,12 +37,12 @@ function App() {
           }}
         />
       );
-    } else if (checkGame === 6) {
-      return <>55555555555555</>;
+    } else if (checkGame === 3) {
+      return <Winner />;
     }
   };
   return (
-    <div className="app">
+    <div className="app" style={{ fontSize: 20 }}>
       <img className="BR" src={BR} alt="BR" />
       <Mascot
         open={open}
@@ -66,7 +67,7 @@ function App() {
           <Card className="card-screen">
             <Game
               setMeseger={() => {
-                setMaseger('chuc mung ban da danh chien thang');
+                setMaseger('Chúc mừng bạn đã chiến thắng');
                 setOpen(false);
               }}
               setCheckGame={setCheckGame}

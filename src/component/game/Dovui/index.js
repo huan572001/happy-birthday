@@ -12,13 +12,13 @@ const DoVui = ({ setWin }) => {
   const [openReset, setOpenReset] = useState();
   useEffect(() => {
     if (isTypingComplete) {
-      setMaseger('hãy trả lời câu hỏi sau để có thể đi tiếp nhé ');
+      setMaseger('Hãy trả lời câu hỏi sau để có thể đi tiếp nhé ');
       setOpen(true);
     }
   }, [isTypingComplete]);
   const KTKQ = (values) => {
     if (values === cauhoi.current.DapAnDung) {
-      setMaseger('Xin chuc mwng ban da rar loi chinh xac');
+      setMaseger('Xin chuc mừng bạn đã trả lời chính xác');
       setOpenReset('ok');
     } else {
       setMaseger('Bạn đã trả lời sai rồi hãy thử lại nhé');
